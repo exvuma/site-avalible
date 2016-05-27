@@ -32,7 +32,7 @@ server {
 	index index.html index.htm;
 
 	# Make site accessible from http://localhost/
-	server_name victoriabernard.com;
+	server_name victoriabernard.com nginx.victoriabernard.com;
         #glince.pointzerograppling.com pointzerograppling.com victoriabernard.com www.victoriabernard.com; ##	server_name localhost;
 
 	location / {
