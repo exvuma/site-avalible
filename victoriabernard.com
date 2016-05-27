@@ -45,7 +45,7 @@ server {
 
 	# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
 	#location /RequestDenied {
-	#	proxy_pass http://127.0.0.1:8080;    
+	#	proxy_pass http://127.0.0.1:8080;
 	#}
 
 	#error_page 404 /404.html;
@@ -93,40 +93,3 @@ server {
 #		try_files $uri $uri/ =404;
 #	}
 #}
-
-
-# HTTPS server
-#
-server {
-
-
-        listen 443;
-
-
-        ssl        on;
-        ssl_certificate         /home/victoria/origin_cert.pem;
-        ssl_certificate_key     /home/victoria/private_key.pem;
-#       root /usr/share/nginx/html;
-        root /var/www/victoriabernard.com/html; #        root /var/www/glince.pointzerograppling.com/html;
-        index index.html index.htm;
-
-        server_name victoriabernard.com;
-
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-                # Uncomment to enable naxsi on this location
-                # include /etc/nginx/naxsi.rules
-        }
-#
-#	ssl_certificate cert.pem;
-	#ssl_certificate_key cert.key;
-#
-	ssl_session_timeout 5m;
-#
-	ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-	ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-	ssl_prefer_server_ciphers on;
-#
-}
